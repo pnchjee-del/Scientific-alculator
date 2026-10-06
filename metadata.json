@@ -1,0 +1,8 @@
+{
+  "name": "Scientific Calculator",
+  "description": "Advanced scientific calculator supporting complex numbers, algebraic equations, multi-domain unit conversions, function graphing, Gemini AI STEM problem solver, text-to-speech explanations, and high-resolution mathematical visualizations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
