@@ -7,7 +7,8 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build
+COPY package*.json ./
+RUN npm install --no-audit --legacy-peer-deps
 
 FROM node:22-alpine AS runner
 
