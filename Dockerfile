@@ -6,9 +6,15 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-COPY . .
+FROM node:20  # Avoid using light alpine variants if they lack build tools
+
+WORKDIR /app  # <--- CRITICAL FIX: Forces npm to run inside an application folder
+
 COPY package*.json ./
-RUN npm install --no-audit --legacy-peer-deps
+RUN npm install
+
+COPY . .
+
 
 FROM node:22-alpine AS runner
 
